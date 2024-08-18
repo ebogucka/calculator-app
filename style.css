@@ -1,0 +1,35 @@
+:root {
+    --attribution-color: hsl(228, 45%, 44%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.attribution {
+    font-size: 11px;
+    height: 2.5rem;
+    margin-top: auto;
+    align-content: center;
+}
+
+.attribution a {
+    color: var(--attribution-color);
+}

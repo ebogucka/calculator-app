@@ -115,3 +115,5 @@ const deleteKey = document.querySelector('#delKey');
 deleteKey.addEventListener('click', () => {
   handleDeleteClick();
 });
+
+document.documentElement.classList.add('theme-1');

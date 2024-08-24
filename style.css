@@ -1,5 +1,57 @@
+/* league-spartan-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/league-spartan-v11-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
 :root {
     --attribution-color: hsl(228, 45%, 44%);
+    --white: hsl(0, 0%, 100%);
+}
+
+.theme-1 {
+    --main-background-color: hsl(222, 26%, 31%);
+    --keypad-background-color: hsl(223, 31%, 20%);
+    --screen-background-color: hsl(224, 36%, 15%);
+    --key-background-color: hsl(225, 21%, 49%);
+    --key-shadow-color: hsl(224, 28%, 35%);
+    --key-background-color-2: hsl(6, 63%, 50%);
+    --key-shadow-color-2: hsl(6, 70%, 34%);
+    --key-background-color-3: hsl(30, 25%, 89%);
+    --key-shadow-color-3: hsl(28, 16%, 65%);
+    --text-color: hsl(221, 14%, 31%);
+}
+
+.theme-2 {
+    --main-background-color: hsl(0, 0%, 90%);
+    --keypad-background-color: hsl(0, 5%, 81%);
+    --screen-background-color: hsl(0, 0%, 93%);
+    --key-background-color: hsl(185, 42%, 37%);
+    --key-shadow-color: hsl(185, 58%, 25%);
+    --key-background-color-2: hsl(25, 98%, 40%);
+    --key-shadow-color-2: hsl(25, 99%, 27%);
+    --key-background-color-3: hsl(45, 7%, 89%);
+    --key-shadow-color-3: hsl(35, 11%, 61%);
+    --text-color: hsl(60, 10%, 19%);
+}
+
+.theme-3 {
+    --main-background-color: hsl(268, 75%, 9%);
+    --keypad-background-color: hsl(268, 71%, 12%);
+    --screen-background-color: hsl(268, 71%, 12%);
+    --key-background-color: hsl(281, 89%, 26%);
+    --key-shadow-color: hsl(285, 91%, 52%);
+    --key-background-color-2: hsl(176, 100%, 44%);
+    --key-shadow-color-2: hsl(177, 92%, 70%);
+    --key-background-color-3: hsl(268, 47%, 21%);
+    --key-shadow-color-3: hsl(290, 70%, 36%);
+    --text-color: hsl(52, 100%, 62%);
+    --text-color-2: hsl(198, 20%, 13%);
 }
 
 * {
@@ -14,6 +66,9 @@ body {
     align-items: center;
     height: 100vh;
     flex-direction: column;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
 }
 
 main {

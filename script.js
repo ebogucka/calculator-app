@@ -11,7 +11,10 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a / b;
+  if (b === 0) {
+    return 'ERROR';
+  }
+  return a / b;
 }
 
 function operate(operator, a, b) {
@@ -27,8 +30,8 @@ function operate(operator, a, b) {
   }
 }
 
-var firstNumber = undefined;
-var secondNumber = undefined;
+var firstNumber = null;
+var secondNumber = null;
 var operator = '';
 var displayValue = '';
 var isAwaitingNumberInput = true;
@@ -43,14 +46,14 @@ function handleDigitClick(digit) {
 }
 
 function handleOperatorClick(operator) {
-  if (firstNumber === undefined) {
+  if (firstNumber === null) {
     firstNumber = Number(displayValue);
   } else {
     secondNumber = Number(displayValue);
     const result = operate(this.operator, firstNumber, secondNumber);
     displayValue = result;
     firstNumber = result;
-    secondNumber = undefined;
+    secondNumber = null;
   }
   this.operator = operator;
   isAwaitingNumberInput = true;
@@ -59,15 +62,29 @@ function handleOperatorClick(operator) {
 
 function handleEqualsClick() {
   secondNumber = Number(displayValue);
-  if (firstNumber !== undefined && secondNumber !== undefined) {
+  if (firstNumber !== null && secondNumber !== null) {
     const result = operate(operator, firstNumber, secondNumber);
     displayValue = result;
-    firstNumber = undefined;
-    secondNumber = undefined;
+    firstNumber = null;
+    secondNumber = null;
     operator = '';
     document.getElementById('display').textContent = displayValue;
     isAwaitingNumberInput = true;
   }
+}
+
+function handleResetClick() {
+  firstNumber = null;
+  secondNumber = null;
+  operator = '';
+  displayValue = '';
+  document.getElementById('display').textContent = displayValue;
+  isAwaitingNumberInput = true;
+}
+
+function handleDeleteClick() {
+  displayValue = displayValue.slice(0, -1);
+  document.getElementById('display').textContent = displayValue;
 }
 
 const digitButtons = document.querySelectorAll('.digitKey');
@@ -87,4 +104,14 @@ operatorButtons.forEach((button) => {
 const equalsKey = document.querySelector('.equalsKey');
 equalsKey.addEventListener('click', () => {
   handleEqualsClick();
+});
+
+const resetKey = document.querySelector('#resetKey');
+resetKey.addEventListener('click', () => {
+  handleResetClick();
+});
+
+const deleteKey = document.querySelector('#delKey');
+deleteKey.addEventListener('click', () => {
+  handleDeleteClick();
 });
